@@ -35,7 +35,7 @@ export const Devices = () => {
         wattage: Number(wattage),
         building,
         room,
-        organization: user?.organization || user?.organization?._id
+        organization: user?.organization?._id || user?.organization
       }));
       
       // Need to re-fetch or populate to get building/room names, but we can fake it locally or just reload

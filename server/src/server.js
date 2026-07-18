@@ -12,7 +12,7 @@ const start = async () => {
   const server = http.createServer(app);
   const io = new Server(server, {
     cors: {
-      origin: env.clientUrl,
+      origin: env.clientOrigins.includes('*') ? true : env.clientOrigins,
       credentials: true
     }
   });
@@ -20,8 +20,10 @@ const start = async () => {
   initSocket(io);
 
   server.listen(env.port, () => {
-    console.log(`VoltView API running on port ${env.port}`);
-    startEnergySimulationJob();
+    console.log(`VoltView API running on port ${env.port} [${env.nodeEnv}]`);
+    if (env.enableEnergySimulation) {
+      startEnergySimulationJob();
+    }
   });
 };
 

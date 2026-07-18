@@ -8,7 +8,6 @@ import { EnergyLog } from '../models/EnergyLog.js';
 import { Floor } from '../models/Floor.js';
 import { Notification } from '../models/Notification.js';
 import { Organization } from '../models/Organization.js';
-import { Report } from '../models/Report.js';
 import { Room } from '../models/Room.js';
 import { Setting } from '../models/Setting.js';
 import { User } from '../models/User.js';
@@ -28,7 +27,6 @@ const seed = async () => {
     Bill.deleteMany({}),
     Alert.deleteMany({}),
     Notification.deleteMany({}),
-    Report.deleteMany({}),
     AuditLog.deleteMany({}),
     Setting.deleteMany({})
   ]);

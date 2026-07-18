@@ -10,7 +10,7 @@ export const writeAuditLog = async ({ req, action, entityType, entityId, metadat
       entityId,
       metadata,
       ipAddress: req.ip,
-      userAgent: req.headers['user-agent']
+      userAgent: req.headers?.['user-agent']
     });
   } catch (error) {
     console.error('Audit log failed', error.message);

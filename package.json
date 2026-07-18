@@ -8,7 +8,12 @@
     "install:all": "npm install --prefix server && npm install --prefix client",
     "seed": "npm run seed --prefix server",
     "lint": "npm run lint --prefix client",
-    "start": "npm start --prefix server"
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down",
+    "docker:seed": "docker compose exec api node src/seed/seed.js",
+    "docker:logs": "docker compose logs -f"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

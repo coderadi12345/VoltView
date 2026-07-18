@@ -1,6 +1,7 @@
 node_modules
 .env
 .env.local
+.env.production
 dist
 build
 coverage
@@ -8,4 +9,5 @@ coverage
 npm-debug.log*
 logs
 *.log
-.env.example
+*.pem
+.docker-data
